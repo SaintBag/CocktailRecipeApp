@@ -43,7 +43,7 @@ enum Endpoints {
 class ApiService {
     
     var drinks: Drinks?
-    var drinksResponse: DrinksResponse?
+    var drinksResponse: DrinksDetails?
     
     func searchCocktailByIngredient(searchTerm: String, completion: @escaping (Result<Drinks, NetworkError>) -> Void) {
         var request = URLRequest(url: Endpoints.searchByIngredient(searchTerm).url)
@@ -71,7 +71,7 @@ class ApiService {
         }.resume()
     }
     
-    func lookupFullCocktailDetails(id: String, completion: @escaping (Result<DrinksResponse, NetworkError>) -> Void) {
+    func lookupFullCocktailDetails(id: String, completion: @escaping (Result<DrinksDetails, NetworkError>) -> Void) {
         var request = URLRequest(url: Endpoints.lookUp(id).url)
         request.httpMethod = HTTPMethod.get.rawValue
         
@@ -87,7 +87,7 @@ class ApiService {
             
             let decoder = JSONDecoder()
             do {
-                self.drinksResponse = try decoder.decode(DrinksResponse.self, from: data)
+                self.drinksResponse = try decoder.decode(DrinksDetails.self, from: data)
                 completion(.success(self.drinksResponse!))
             } catch  {
                 completion(.failure(.decodeFailed))
