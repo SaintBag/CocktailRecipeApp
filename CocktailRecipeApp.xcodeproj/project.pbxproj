@@ -16,6 +16,8 @@
 		2989E4C729755EBA0021F7D9 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4C629755EBA0021F7D9 /* Drinks.swift */; };
 		2989E4C9297567B70021F7D9 /* DrinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4C8297567B70021F7D9 /* DrinkResponse.swift */; };
 		2989E4CB297569F90021F7D9 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4CA297569F90021F7D9 /* Networking.swift */; };
+		2989E4CD297573900021F7D9 /* CocktailCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4CC297573900021F7D9 /* CocktailCellVC.swift */; };
+		2989E4D0297594F20021F7D9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2989E4CF297594F20021F7D9 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		2989E4C629755EBA0021F7D9 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		2989E4C8297567B70021F7D9 /* DrinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkResponse.swift; sourceTree = "<group>"; };
 		2989E4CA297569F90021F7D9 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2989E4CC297573900021F7D9 /* CocktailCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCellVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2989E4D0297594F20021F7D9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +69,6 @@
 				2989E4C3297559220021F7D9 /* AppSetup */,
 				2989E4C42975594E0021F7D9 /* Models */,
 				2989E4C52975595D0021F7D9 /* Screens */,
-				2989E4B1297555B60021F7D9 /* ViewController.swift */,
 				2989E4B6297555BB0021F7D9 /* Assets.xcassets */,
 				2989E4B8297555BB0021F7D9 /* LaunchScreen.storyboard */,
 				2989E4BB297555BB0021F7D9 /* Info.plist */,
@@ -96,6 +99,8 @@
 		2989E4C52975595D0021F7D9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				2989E4B1297555B60021F7D9 /* ViewController.swift */,
+				2989E4CC297573900021F7D9 /* CocktailCellVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -116,6 +121,9 @@
 			dependencies = (
 			);
 			name = CocktailRecipeApp;
+			packageProductDependencies = (
+				2989E4CF297594F20021F7D9 /* Kingfisher */,
+			);
 			productName = CocktailRecipeApp;
 			productReference = 2989E4AA297555B60021F7D9 /* CocktailRecipeApp.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 2989E4A1297555B50021F7D9;
+			packageReferences = (
+				2989E4CE297594F20021F7D9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2989E4AB297555B60021F7D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,6 +185,7 @@
 				2989E4B2297555B60021F7D9 /* ViewController.swift in Sources */,
 				2989E4AE297555B60021F7D9 /* AppDelegate.swift in Sources */,
 				2989E4C729755EBA0021F7D9 /* Drinks.swift in Sources */,
+				2989E4CD297573900021F7D9 /* CocktailCellVC.swift in Sources */,
 				2989E4CB297569F90021F7D9 /* Networking.swift in Sources */,
 				2989E4C9297567B70021F7D9 /* DrinkResponse.swift in Sources */,
 				2989E4B0297555B60021F7D9 /* SceneDelegate.swift in Sources */,
@@ -392,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2989E4CE297594F20021F7D9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2989E4CF297594F20021F7D9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2989E4CE297594F20021F7D9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2989E4A2297555B50021F7D9 /* Project object */;
 }

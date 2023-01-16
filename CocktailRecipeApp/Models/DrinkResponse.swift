@@ -11,11 +11,11 @@ import Foundation
 
 // TODO: change naming convention
 
-struct DrinksResponse: Codable {
-    let drinks: [DrinkResult]
+struct DrinksDetails: Codable {
+    let drinks: [DrinkDetail]
 }
 
-struct DrinkResult: Codable {
+struct DrinkDetail: Codable {
     
     let drinkName: String
     let imageString: String
