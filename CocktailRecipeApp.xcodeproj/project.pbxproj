@@ -18,6 +18,7 @@
 		2989E4CB297569F90021F7D9 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4CA297569F90021F7D9 /* Networking.swift */; };
 		2989E4CD297573900021F7D9 /* CocktailCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4CC297573900021F7D9 /* CocktailCellVC.swift */; };
 		2989E4D0297594F20021F7D9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2989E4CF297594F20021F7D9 /* Kingfisher */; };
+		2989E4D22975BF380021F7D9 /* CocktailRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4D12975BF380021F7D9 /* CocktailRecipeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		2989E4C8297567B70021F7D9 /* DrinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkResponse.swift; sourceTree = "<group>"; };
 		2989E4CA297569F90021F7D9 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2989E4CC297573900021F7D9 /* CocktailCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCellVC.swift; sourceTree = "<group>"; };
+		2989E4D12975BF380021F7D9 /* CocktailRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailRecipeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				2989E4B1297555B60021F7D9 /* ViewController.swift */,
 				2989E4CC297573900021F7D9 /* CocktailCellVC.swift */,
+				2989E4D12975BF380021F7D9 /* CocktailRecipeVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				2989E4AE297555B60021F7D9 /* AppDelegate.swift in Sources */,
 				2989E4C729755EBA0021F7D9 /* Drinks.swift in Sources */,
 				2989E4CD297573900021F7D9 /* CocktailCellVC.swift in Sources */,
+				2989E4D22975BF380021F7D9 /* CocktailRecipeVC.swift in Sources */,
 				2989E4CB297569F90021F7D9 /* Networking.swift in Sources */,
 				2989E4C9297567B70021F7D9 /* DrinkResponse.swift in Sources */,
 				2989E4B0297555B60021F7D9 /* SceneDelegate.swift in Sources */,

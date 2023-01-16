@@ -40,6 +40,18 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
            drink = drinks
     }
     
+}
+
+extension CocktailSearchVC {
+    
+    private func titleConfiguration() {
+        self.navigationController?.navigationBar.topItem?.title = "Cocktail App"
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+}
+
+extension CocktailSearchVC {
+    
     private func viewConfiguration() {
         titleConfiguration()
         setupCollectionView()
@@ -50,20 +62,9 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
         collectionView.backgroundColor = .systemPink
         collectionView.register(CocktailCellVC.self, forCellWithReuseIdentifier: cellID)
     }
-    
-    func fetchDrinks(searchTerm: String) {
-        
-        apiService.searchCocktailByIngredient(searchTerm: searchTerm) { result in
-            do {
-                let drinks = try result.get()
-                DispatchQueue.main.async {
-                    self.drinks = drinks.drinks
-                }
-            } catch {
-                print(result)
-            }
-        }
-    }
+}
+
+extension CocktailSearchVC {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
        {
@@ -73,6 +74,9 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
 
            return CGSize(width: width, height: view.frame.height/4)
        }
+}
+
+extension CocktailSearchVC {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return drinks.count
@@ -91,12 +95,33 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let drinkID = drinks[indexPath.row].drinkID
+        let vc = CocktailRecipeVC(id: drinkID)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension CocktailSearchVC {
     
-    private func titleConfiguration() {
-        self.navigationController?.navigationBar.topItem?.title = "Cocktail App"
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "Gill Sans", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+    func fetchDrinks(searchTerm: String) {
+        
+        apiService.searchCocktailByIngredient(searchTerm: searchTerm) { result in
+            do {
+                let drinks = try result.get()
+                DispatchQueue.main.async {
+                    self.drinks = drinks.drinks
+                }
+            } catch {
+                print(result)
+            }
+        }
     }
+}
+
+
+extension CocktailSearchVC {
+    
+    
 }
