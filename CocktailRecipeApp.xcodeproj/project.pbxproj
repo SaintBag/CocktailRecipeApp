@@ -13,6 +13,8 @@
 		2989E4B7297555BB0021F7D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2989E4B6297555BB0021F7D9 /* Assets.xcassets */; };
 		2989E4BA297555BB0021F7D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2989E4B8297555BB0021F7D9 /* LaunchScreen.storyboard */; };
 		2989E4C2297558D80021F7D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2989E4C1297558D80021F7D9 /* Main.storyboard */; };
+		2989E4C729755EBA0021F7D9 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4C629755EBA0021F7D9 /* Drinks.swift */; };
+		2989E4C9297567B70021F7D9 /* DrinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2989E4C8297567B70021F7D9 /* DrinkResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2989E4B9297555BB0021F7D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2989E4BB297555BB0021F7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2989E4C1297558D80021F7D9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2989E4C629755EBA0021F7D9 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		2989E4C8297567B70021F7D9 /* DrinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 		2989E4C42975594E0021F7D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2989E4C629755EBA0021F7D9 /* Drinks.swift */,
+				2989E4C8297567B70021F7D9 /* DrinkResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +170,8 @@
 			files = (
 				2989E4B2297555B60021F7D9 /* ViewController.swift in Sources */,
 				2989E4AE297555B60021F7D9 /* AppDelegate.swift in Sources */,
+				2989E4C729755EBA0021F7D9 /* Drinks.swift in Sources */,
+				2989E4C9297567B70021F7D9 /* DrinkResponse.swift in Sources */,
 				2989E4B0297555B60021F7D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
