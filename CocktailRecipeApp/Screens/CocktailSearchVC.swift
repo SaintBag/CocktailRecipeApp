@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CocktailSearchVC.swift
 //  CocktailRecipeApp
 //
 //  Created by Sebastian on 16/01/2023.
@@ -28,7 +28,8 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
         viewConfiguration()
         fetchDrinks(searchTerm: "Vodka")
         customCollectionViewLayout()
-        //      fetchDrinks(searchTerm: searchBar.text ?? "")
+        //TODO: Setup SearchBar and use this
+        // fetchDrinks(searchTerm: searchBar.text ?? "")
     }
     
     func customCollectionViewLayout() {
@@ -57,7 +58,7 @@ extension CocktailSearchVC {
     
     private func setupCollectionView() {
         collectionView.backgroundColor = .systemPink
-        collectionView.register(CocktailCellVC.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(CocktailSearchCellVC.self, forCellWithReuseIdentifier: cellID)
     }
 }
 
@@ -81,8 +82,7 @@ extension CocktailSearchVC {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CocktailCellVC
-        cell.backgroundColor = .white
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CocktailSearchCellVC
         let drink = drinks[indexPath.row].drinkName
         let image = drinks[indexPath.row].drinkImage
         let url = URL(string: image)
@@ -103,7 +103,6 @@ extension CocktailSearchVC {
 extension CocktailSearchVC {
     
     func fetchDrinks(searchTerm: String) {
-        
         apiService.searchCocktailByIngredient(searchTerm: searchTerm) { result in
             do {
                 let drinks = try result.get()
