@@ -1,15 +1,11 @@
 //
-//  DrinkResponse.swift
+//  DrinksDetails.swift
 //  CocktailRecipeApp
 //
 //  Created by Sebastian on 16/01/2023.
 //
 
 import Foundation
-
-import Foundation
-
-// TODO: change naming convention
 
 struct DrinksDetails: Codable {
     let drinks: [DrinkDetail]

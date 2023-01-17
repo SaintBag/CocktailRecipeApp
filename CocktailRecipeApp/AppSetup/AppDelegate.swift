@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBarColors()
         let flowLayout = UICollectionViewFlowLayout()
         let collectionViewController = CocktailSearchVC(collectionViewLayout: flowLayout)
-//        let vc = CocktailSearchVC()
         let nc = UINavigationController(rootViewController: collectionViewController)
         window?.rootViewController = nc
         
