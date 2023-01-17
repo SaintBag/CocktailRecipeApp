@@ -13,17 +13,8 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
     var apiService = ApiService()
     
     var drink: [Drink]!
-    var drinksResult: DrinkDetail?
     private let cellID = "cellID"
     
-//    var drinksResults: [DrinkResult] = [] {
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.collectionView.reloadData()
-//            }
-//        }
-//    }
-
     var drinks: [Drink] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -31,15 +22,21 @@ class CocktailSearchVC: UICollectionViewController, UICollectionViewDelegateFlow
             }
         }
     }
-            
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewConfiguration()
         fetchDrinks(searchTerm: "Vodka")
-//        whichButtonWasPushed(searchTerm: searchBar.text ?? "")
-           drink = drinks
+        customCollectionViewLayout()
+        //      fetchDrinks(searchTerm: searchBar.text ?? "")
     }
     
+    func customCollectionViewLayout() {
+        let layout = collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.minimumLineSpacing = 2
+        layout?.minimumInteritemSpacing = 2
+        layout?.sectionInset = .init(top: 2, left: 2, bottom: 2, right: 2)
+    }
 }
 
 extension CocktailSearchVC {
@@ -67,13 +64,14 @@ extension CocktailSearchVC {
 extension CocktailSearchVC {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-       {
-           let leftAndRightPadding: CGFloat = 12.0
-           let numberOfItemsInRow: CGFloat = 2.0
-           let width = (view.frame.width-leftAndRightPadding)/numberOfItemsInRow
-
-           return CGSize(width: width, height: view.frame.height/4)
-       }
+    {
+        
+        let sidePadding: CGFloat = 10
+        let numbersOfItemInRow: CGFloat = 2.0
+        let width = (view.frame.width - sidePadding)/numbersOfItemInRow
+        
+        return CGSize(width: width, height: width)
+    }
 }
 
 extension CocktailSearchVC {
@@ -84,14 +82,13 @@ extension CocktailSearchVC {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CocktailCellVC
-        cell.backgroundColor = .systemPink
-        //TODO: SetUp views for the cell like image and drink labels
+        cell.backgroundColor = .white
         let drink = drinks[indexPath.row].drinkName
         let image = drinks[indexPath.row].drinkImage
         let url = URL(string: image)
         
-            cell.setRecipeTitleLabel(title: drink)
-            cell.recipeImageView.kf.setImage(with: url)
+        cell.setRecipeTitleLabel(title: drink)
+        cell.recipeImageView.kf.setImage(with: url)
         
         return cell
     }
@@ -120,8 +117,3 @@ extension CocktailSearchVC {
     }
 }
 
-
-extension CocktailSearchVC {
-    
-    
-}
